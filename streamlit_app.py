@@ -19,6 +19,6 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 # Display the table on the page.
 streamlit.dataframe(fruits_to_show)
 
-df2 = fruits_to_show.sum(axis=1)
+df2 = fruits_to_show.eval(axis=1)
 streamlit.dataframe(df2)
 
