@@ -2,11 +2,12 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-dataframe = np.random.randn(10, 20)
-st.dataframe(dataframe)
+streamlit.header('Breakfast Menu')
+streamlit.text('Omega 3 & Blueberry Oatmeal')
+streamlit.text('Kale, Spinach & Rocket Smoothie')
+streamlit.text('Hard-Boiled Free-Range Egg')
 
-dataframe = pd.DataFrame(
-    np.random.randn(10, 20),
-    columns=('col %d' % i for i in range(20)))
+streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
-st.dataframe(dataframe.style.highlight_max(axis=0))
+my_fruit_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
+streamlit.dataframe(my_fruit_list)
